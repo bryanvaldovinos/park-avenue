@@ -1,0 +1,65 @@
+.container {
+  max-width: 100%;
+  margin: 30px;
+}
+
+.row {
+  display: flex;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: 100%;
+    margin: 20px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .col-50 {
+    width: 97%;
+  }
+
+  .col-50 > img {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+  }
+
+  .col-50 > .white-bg > h2 {
+    font-family: Handlee, sans-serif;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .col-50 > .white-bg > p {
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 14px;
+    line-height: 2rem;
+    margin: 0;
+  }
+
+  .col-50 > .white-bg > p > span {
+    font-family: Handlee, sans-serif;
+    font-size: 16px;
+  }
+
+  .row > .marg {
+    margin: 5px;
+  }
+
+  li > .park-pad {
+    padding: 8px;
+  }
+}
