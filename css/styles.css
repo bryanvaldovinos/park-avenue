@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.green-bg {
+  background-color: #91b69c;
+}
+
+h1 {
+  font-family: Handlee, sans-serif;
+  font-size: 40px;
+  font-weight: 100px;
+}
+
+h2 {
+  font-family: Handlee, sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+
+p {
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 18px;
+  line-height: 2.5rem;
+  margin: 0;
+}
+
+span {
+  font-family: Handlee, sans-serif;
+  font-size: 20px;
+}
+
+.margin-tb {
+  margin: 12px;
+}
+
+.border-r5 {
+  border-radius: 5px;
+}
+
+.light-brown-bg {
+  background-color: #f4efe1;
+}
+
+img {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+}
+
+.park-marg {
+  margin: 25px 0;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.info-pad {
+  padding: 15px 15px 5px;
+}
+
+.marg {
+  margin: 15px;
+}
+
+.park-pad {
+  padding: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
