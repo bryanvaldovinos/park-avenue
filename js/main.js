@@ -1,4 +1,5 @@
 var $uList = document.querySelector('ul');
+var visitA = document.querySelectorAll('a');
 var xhr = new XMLHttpRequest();
 
 xhr.open('GET', 'https://developer.nps.gov/api/v1/parks?stateCode=CA&limit=100&start=0&api_key=QMo4UWEHDizxave1sLvRhoCDJriTI0ifxOZTiwYS');
@@ -82,6 +83,39 @@ xhr.addEventListener('load', function parkList() {
     $button[visits].className = 'col-20 btn brown-bg white-t';
   }
 
+  function visitPage(e) {
+    if (e.target === visitA[1]) {
+      for (var p = 0; p < $park.length; p++) {
+        if ($button[p].textContent === 'Need to go!') {
+          $park[p].className = 'hidden';
+          data.view = 'visited';
+        }
+      }
+    } else if (e.target === visitA[0]) {
+      for (var r = 0; r < $park.length; r++) {
+        if ($button[r].textContent === 'Need to go!') {
+          $park[r].className = '';
+          data.view = 'list';
+        }
+      }
+    }
+  }
+
+  if (data.view === 'list') {
+    for (var q = 0; q < $park.length; q++) {
+      $park[q].className = '';
+    }
+  } else if (data.view === 'visited') {
+    for (var e = 0; e < $park.length; e++) {
+      for (var x = 0; x < data.status.length; x++) {
+        if (data.status[x] !== $park[e].getAttribute('id')) {
+          $park[e].className = 'hidden';
+        }
+      }
+    }
+  }
+
+  document.addEventListener('click', visitPage);
   document.addEventListener('click', visited);
 
 });
