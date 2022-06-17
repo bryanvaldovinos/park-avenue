@@ -3,7 +3,11 @@
 }
 
 .hidden {
-  display: hidden;
+  display: none;
+}
+
+a {
+  cursor: pointer;
 }
 
 h1 {
@@ -18,6 +22,12 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
 p {
   font-family: "Didact Gothic", sans-serif;
   font-size: 18px;
@@ -28,6 +38,10 @@ p {
 span {
   font-family: Handlee, sans-serif;
   font-size: 20px;
+}
+
+.head-pad {
+  padding: 12px;
 }
 
 .margin-tb {
@@ -85,6 +99,7 @@ li {
 }
 
 .btn {
+  cursor: pointer;
   border: none;
   font-family: Handlee, sans-serif;
   font-size: 26px;
@@ -99,4 +114,13 @@ li {
 
 .white-t {
   color: white;
+}
+
+.inline {
+  display: inline;
+}
+
+.right {
+  float: right;
+  margin: 15px 20px 8px 0;
 }
