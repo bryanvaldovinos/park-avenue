@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.col-60 {
+  width: 60%;
+}
+
 .col-50 {
   width: 50%;
 }
@@ -28,7 +32,13 @@
   .row {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    /* justify-content: space-between; */
+  }
+
+  main > .row {
+    display: flex;
+    flex-direction: row;
   }
 
   .col-50 {
@@ -70,5 +80,19 @@
   .col-50 > .row > .col-20 {
     width: 100%;
     font-size: 24px;
+  }
+
+  .col-60 {
+    width: 100%;
+  }
+
+  main > .row > .search {
+    margin-bottom: 18px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  header > .park-marg {
+    margin-bottom: 0;
   }
 }
