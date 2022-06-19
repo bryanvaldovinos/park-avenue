@@ -71,7 +71,7 @@ img {
 }
 
 .park-marg {
-  margin: 25px 0;
+  margin-bottom: 25px;
 }
 
 .white-bg {
@@ -123,4 +123,41 @@ li {
 .right {
   float: right;
   margin: 15px 20px 8px 0;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.marg-0 {
+  margin: 0;
+}
+
+.search {
+  margin-bottom: 25px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input {
+  width: 100%;
+  background-color: #f4efe1;
+  border: none;
+  font-size: 22px;
+  text-align: center;
+  outline-width: 0;
+  color: #91b69c;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+::placeholder {
+  color: #91b69c;
+}
+
+header {
+  margin-bottom: 25px;
 }

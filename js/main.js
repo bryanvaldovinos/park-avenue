@@ -60,8 +60,11 @@ xhr.addEventListener('load', function parkList() {
   }
   var $park = document.querySelectorAll('li');
   var $button = document.querySelectorAll('button');
+  var $searchRow = document.querySelector('.center');
+  var $name = document.querySelectorAll('h2');
+  var $input = document.querySelector('input');
 
-  function visited(e) {
+  function visitButton(e) {
 
     var btnPress = e.target.getAttribute('data-id');
     for (var b = 0; b < $park.length; b++) {
@@ -83,14 +86,22 @@ xhr.addEventListener('load', function parkList() {
     $button[visits].className = 'col-20 btn brown-bg white-t';
   }
 
-  function visitPage(e) {
+  function swapView(e) {
     if (e.target === visitA[1]) {
       for (var p = 0; p < $park.length; p++) {
         if ($button[p].textContent === 'Need to go!') {
           $park[p].className = 'hidden';
           data.view = 'visited';
         }
+        for (var u = 0; u < data.status.length; u++) {
+          var index = data.status[u];
+          if ($park[p].getAttribute('id') === index) {
+            $park[p].className = '';
+          }
+        }
       }
+      $searchRow.className = 'hidden';
+      search();
     } else if (e.target === visitA[0]) {
       for (var r = 0; r < $park.length; r++) {
         if ($button[r].textContent === 'Need to go!') {
@@ -98,6 +109,7 @@ xhr.addEventListener('load', function parkList() {
           data.view = 'list';
         }
       }
+      $searchRow.className = 'row center';
     }
   }
 
@@ -115,8 +127,25 @@ xhr.addEventListener('load', function parkList() {
     }
   }
 
-  document.addEventListener('click', visitPage);
-  document.addEventListener('click', visited);
+  function search() {
+    if (data.view !== 'visited') {
+      var $search = document.querySelector('#search').value;
+      for (var y = 0; y < $name.length; y++) {
+        if ($name[y].textContent.toLowerCase().includes($search.toLowerCase())) {
+          $park[y].className = '';
+        } else {
+          $park[y].className = 'hidden';
+        }
+      }
+    } else if (data.view === 'visited') {
+      document.querySelector('#search').value = '';
+      document.querySelector('input').value = '';
+    }
+  }
+
+  $input.addEventListener('keyup', search);
+  document.addEventListener('click', swapView);
+  document.addEventListener('click', visitButton);
 
 });
 
