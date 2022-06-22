@@ -12,40 +12,28 @@ a {
 
 h1 {
   font-family: Handlee, sans-serif;
-  font-size: 40px;
   font-weight: 100px;
 }
 
 h2 {
   font-family: Handlee, sans-serif;
-  font-size: 30px;
   margin: 0;
 }
 
 h3 {
   font-family: "Didact Gothic", sans-serif;
-  font-size: 20px;
   color: white;
 }
 
 p {
   font-family: "Didact Gothic", sans-serif;
-  font-size: 18px;
-  line-height: 2.5rem;
+  font-size: 12px;
+  line-height: 2rem;
   margin: 0;
 }
 
-span {
-  font-family: Handlee, sans-serif;
-  font-size: 20px;
-}
-
 .head-pad {
-  padding: 12px;
-}
-
-.margin-tb {
-  margin: 12px;
+  padding: 8px;
 }
 
 .border-r5 {
@@ -71,7 +59,7 @@ img {
 }
 
 .park-marg {
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
 .white-bg {
@@ -79,11 +67,11 @@ img {
 }
 
 .info-pad {
-  padding: 15px 15px 5px;
+  padding: 10px 10px 5px;
 }
 
 .marg {
-  margin: 15px;
+  margin: 10px;
 }
 
 .park-pad {
@@ -96,16 +84,18 @@ ul {
 
 li {
   list-style: none;
+  box-shadow: 5px 5px 8px rgb(200, 212, 200);
+  border-radius: 5px;
 }
 
 .btn {
   cursor: pointer;
   border: none;
   font-family: Handlee, sans-serif;
-  font-size: 26px;
-  padding: 7px;
+  font-size: 20px;
+  padding: 5px;
   border-radius: 5px;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .flex-r {
@@ -122,7 +112,7 @@ li {
 
 .right {
   float: right;
-  margin: 15px 20px 8px 0;
+  margin: 10px 20px 5px 0;
 }
 
 .center {
@@ -135,8 +125,8 @@ li {
 }
 
 .search {
-  margin-bottom: 25px;
-  padding: 5px;
+  margin-bottom: 18px;
+  padding: 3px;
   border-radius: 5px;
 }
 
@@ -144,9 +134,14 @@ input {
   width: 100%;
   background-color: #f4efe1;
   border: none;
-  font-size: 22px;
+  border-radius: 5px;
+  font-size: 16px;
   text-align: center;
   outline-width: 0;
+  color: #91b69c;
+}
+
+input::placeholder {
   color: #91b69c;
 }
 
@@ -154,10 +149,42 @@ input:focus::placeholder {
   color: transparent;
 }
 
-::placeholder {
-  color: #91b69c;
+header {
+  margin-bottom: 18px;
 }
 
-header {
-  margin-bottom: 25px;
+.text-marg {
+  margin: 5px;
+}
+
+#comment {
+  width: 99%;
+  border: none;
+  outline-width: 0;
+  margin: 5px;
+}
+
+#comment::placeholder {
+  color: black;
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 12px;
+}
+
+#comment:focus::placeholder {
+  color: transparent;
+}
+
+.text-tb {
+  margin: 10px 0;
+}
+
+#sub {
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-family: Handlee, sans-serif;
+  background-color: #8c8061;
+  padding: 2px 8px;
+  margin: 5px;
+  float: right;
 }
