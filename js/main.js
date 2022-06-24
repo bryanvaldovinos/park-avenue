@@ -106,53 +106,59 @@ xhr.addEventListener('load', function parkList() {
     $visitBtn[visits].className = 'col-20 btn brown-bg white-t';
   }
 
-  function reVisit() {
-    if (data.view === 'visited') {
-      $searchRow.className = 'hidden';
-      for (var p = 0; p < $park.length; p++) {
-        if ($visitBtn[p].textContent === 'Need to go!') {
-          $park[p].className = 'hidden';
-          data.view = 'visited';
-        }
-        for (var u = 0; u < data.status.length; u++) {
-          var index = data.status[u];
-          if ($park[p].getAttribute('id') === index) {
-            $park[Number(index)].className = '';
-            $visitBtn[Number(index)].className = 'hidden';
-            $comment[Number(index)].className = '';
-          }
-        }
+  if (data.view === 'visited') {
+    storeID();
+    $searchRow.className = 'hidden';
+    search();
+    storeComment();
+  } else if (data.view === 'list') {
+    storeButton();
+    $searchRow.className = 'row center';
+  }
+
+  function storeID() {
+    for (var p = 0; p < $park.length; p++) {
+      if ($visitBtn[p].textContent === 'Need to go!') {
+        $park[p].className = 'hidden';
+        data.view = 'visited';
       }
-      search();
-      for (var w = 0; w < $comment.length; w++) {
-        for (var property in data.comment) {
-          if ($comment[w].dataset.dig === property.toString()) {
-            $comment[w].elements[0].textContent = data.comment[w];
-            data.comment[w] = $comment[w].elements[0].value;
-            $comment[w].elements[1].className = 'hidden';
-            $comment[w].elements[0].className = 'text-marg border-r5 green-bg';
-          }
+      for (var u = 0; u < data.status.length; u++) {
+        var index = data.status[u];
+        if ($park[p].getAttribute('id') === index) {
+          $park[Number(index)].className = '';
+          $visitBtn[Number(index)].className = 'hidden';
+          $comment[Number(index)].className = '';
         }
       }
     }
   }
 
-  function reList() {
-    if (data.view === 'list') {
-      $searchRow.className = 'row center';
-      for (var r = 0; r < $park.length; r++) {
-        if ($visitBtn[r].textContent === 'Need to go!') {
-          $park[r].className = '';
-          data.view = 'list';
+  function storeComment() {
+    for (var w = 0; w < $comment.length; w++) {
+      for (var property in data.comment) {
+        if ($comment[w].dataset.dig === property.toString()) {
+          $comment[w].elements[0].textContent = data.comment[w];
+          data.comment[w] = $comment[w].elements[0].value;
+          $comment[w].elements[1].className = 'hidden';
+          $comment[w].elements[0].className = 'text-marg border-r5 green-bg';
         }
-        for (var x = 0; x < data.status.length; x++) {
-          var findex = data.status[x];
-          if ($park[r].getAttribute('id') === findex) {
-            $park[Number(findex)].className = '';
-            $visitBtn[Number(findex)].className = 'col-20 btn brown-bg white-t';
-            $visitBtn[Number(findex)].textContent = 'Been there!';
-            $comment[Number(findex)].className = 'hidden';
-          }
+      }
+    }
+  }
+
+  function storeButton() {
+    for (var r = 0; r < $park.length; r++) {
+      if ($visitBtn[r].textContent === 'Need to go!') {
+        $park[r].className = '';
+        data.view = 'list';
+      }
+      for (var x = 0; x < data.status.length; x++) {
+        var findex = data.status[x];
+        if ($park[r].getAttribute('id') === findex) {
+          $park[Number(findex)].className = '';
+          $visitBtn[Number(findex)].className = 'col-20 btn brown-bg white-t';
+          $visitBtn[Number(findex)].textContent = 'Been there!';
+          $comment[Number(findex)].className = 'hidden';
         }
       }
     }
@@ -168,17 +174,14 @@ xhr.addEventListener('load', function parkList() {
       } else if ((btnPress === $park[b].getAttribute('id')) && ($visitBtn[b].textContent === 'Been there!')) {
         $visitBtn[b].textContent = 'Need to go!';
         $visitBtn[b].className = 'col-20 btn green-bg';
-
-        var propArray = Object.keys(data.comment);
-        for (var q = 0; q < propArray.length; q++) {
-          if ($comment[b].dataset.dig === propArray[q]) {
+        for (var property in data.comment) {
+          if ($comment[b].dataset.dig === property.toString()) {
             $comment[b].elements[0].textContent = '';
             $comment[b].elements[1].className = '';
             $comment[b].elements[0].className = 'text-marg border-r5';
             delete data.comment[b];
           }
         }
-
         data.status.pop();
       }
     }
@@ -186,48 +189,12 @@ xhr.addEventListener('load', function parkList() {
 
   function swapView(e) {
     if (e.target === visitA[1]) {
-      for (var p = 0; p < $park.length; p++) {
-        if ($visitBtn[p].textContent === 'Need to go!') {
-          $park[p].className = 'hidden';
-          data.view = 'visited';
-        }
-        for (var u = 0; u < data.status.length; u++) {
-          var index = data.status[u];
-          if ($park[p].getAttribute('id') === index) {
-            $park[Number(index)].className = '';
-            $visitBtn[Number(index)].className = 'hidden';
-            $comment[Number(index)].className = '';
-          }
-        }
-      }
+      storeID();
       $searchRow.className = 'hidden';
       search();
-      for (var w = 0; w < $comment.length; w++) {
-        for (var property in data.comment) {
-          if ($comment[w].dataset.dig === property.toString()) {
-            $comment[w].elements[0].textContent = data.comment[w];
-            data.comment[w] = $comment[w].elements[0].value;
-            $comment[w].elements[1].className = 'hidden';
-            $comment[w].elements[0].className = 'text-marg border-r5 green-bg';
-          }
-        }
-      }
+      storeComment();
     } else if (e.target === visitA[0]) {
-      for (var r = 0; r < $park.length; r++) {
-        if ($visitBtn[r].textContent === 'Need to go!') {
-          $park[r].className = '';
-          data.view = 'list';
-        }
-        for (var x = 0; x < data.status.length; x++) {
-          var findex = data.status[x];
-          if ($park[r].getAttribute('id') === findex) {
-            $park[Number(findex)].className = '';
-            $visitBtn[Number(findex)].className = 'col-20 btn brown-bg white-t';
-            $visitBtn[Number(findex)].textContent = 'Been there!';
-            $comment[Number(findex)].className = 'hidden';
-          }
-        }
-      }
+      storeButton();
       $searchRow.className = 'row center';
     }
   }
@@ -265,8 +232,6 @@ xhr.addEventListener('load', function parkList() {
     }
   }
 
-  reVisit();
-  reList();
   $input.addEventListener('keyup', search);
   document.addEventListener('click', swapView);
   document.addEventListener('click', visitButton);
