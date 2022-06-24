@@ -1,17 +1,18 @@
 /* exported data */
 var data = {
   view: 'list',
-  status: []
+  status: [],
+  comment: {}
 };
 
-var previousParksJSON = localStorage.getItem('Data Info:');
+var previousParksJSON = localStorage.getItem('park-info');
 if (previousParksJSON !== null) {
   data = JSON.parse(previousParksJSON);
 }
 
 function local(event) {
   var visitedJSON = JSON.stringify(data);
-  localStorage.setItem('Data Info:', visitedJSON);
+  localStorage.setItem('park-info', visitedJSON);
 }
 
 window.addEventListener('beforeunload', local);

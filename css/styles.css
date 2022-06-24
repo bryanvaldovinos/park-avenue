@@ -162,6 +162,7 @@ header {
   border: none;
   outline-width: 0;
   margin: 5px;
+  resize: none;
 }
 
 #comment::placeholder {
@@ -187,4 +188,8 @@ header {
   padding: 2px 8px;
   margin: 5px;
   float: right;
+}
+
+textarea {
+  font-family: "Didact Gothic", sans-serif;
 }
