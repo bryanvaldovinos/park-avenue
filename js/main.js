@@ -34,6 +34,7 @@ xhr.addEventListener('load', function parkList() {
 
     var parkName = document.createElement('h2');
     parkName.textContent = liItem.fullName;
+    parkName.setAttribute('id', 'parkname');
     textArea.appendChild(parkName);
 
     var parkBio = document.createElement('p');
@@ -96,7 +97,7 @@ xhr.addEventListener('load', function parkList() {
   var $park = document.querySelectorAll('li');
   var $visitBtn = document.querySelectorAll('[data-id]');
   var $searchRow = document.querySelector('.center');
-  var $name = document.querySelectorAll('h2');
+  var $name = document.querySelectorAll('#parkname');
   var $input = document.querySelector('input');
   var $comment = document.querySelectorAll('form');
   var $empty = document.querySelector('.msg-center');
