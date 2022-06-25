@@ -99,6 +99,7 @@ xhr.addEventListener('load', function parkList() {
   var $name = document.querySelectorAll('h2');
   var $input = document.querySelector('input');
   var $comment = document.querySelectorAll('form');
+  var $empty = document.querySelector('.msg-center');
 
   for (var d = 0; d < data.status.length; d++) {
     var visits = Number(data.status[d]);
@@ -111,6 +112,9 @@ xhr.addEventListener('load', function parkList() {
     $searchRow.className = 'hidden';
     search();
     storeComment();
+    if (data.status.length === 0) {
+      $empty.className = 'row msg-center';
+    }
   } else if (data.view === 'list') {
     storeButton();
     $searchRow.className = 'row center';
@@ -193,9 +197,13 @@ xhr.addEventListener('load', function parkList() {
       $searchRow.className = 'hidden';
       search();
       storeComment();
+      if (data.status.length === 0) {
+        $empty.className = 'row msg-center';
+      }
     } else if (e.target === visitA[0]) {
       storeButton();
       $searchRow.className = 'row center';
+      $empty.className = 'row msg-center hidden';
     }
   }
 

@@ -1,10 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
-  max-width: 100%;
-  margin: 20px 70px;
+  max-width: 360px;
+  width: 360px;
+  margin: 15px;
 }
 
 .row {
   display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-height: 30vh;
 }
 
 .col-100 {
@@ -12,86 +23,116 @@
 }
 
 .col-90 {
-  width: 90%;
+  width: 97%;
 }
 
-.col-40 {
-  width: 40%;
-}
-
-.col-50 {
-  width: 50%;
+.col-90 > #comment {
+  width: 100%;
 }
 
 .col-20 {
-  width: 20%;
+  width: 100%;
 }
 
-@media screen and (max-width: 800px) {
+.col-10 {
+  width: 100%;
+}
+
+.col-10 > #sub {
+  width: 97%;
+}
+
+@media screen and (min-width: 768px) {
   .container {
-    max-width: 100%;
-    margin: 15px;
+    max-width: 1200px;
+    width: 800px;
+    margin: 20px 70px;
   }
 
   .row {
     display: flex;
-    flex-direction: column;
-
-    /* justify-content: space-between; */
-  }
-
-  main > .row {
-    display: flex;
     flex-direction: row;
   }
 
+  img {
+    object-fit: fill;
+    max-height: 200vh;
+    max-width: 550px;
+  }
+
+  .col-100 {
+    width: 100%;
+  }
+
+  .col-90 {
+    width: 90%;
+  }
+
   .col-50 {
-    width: 97%;
+    width: 50%;
   }
 
-  .col-50 > img {
-    width: 100%;
-    height: 25vh;
-    object-fit: cover;
+  .col-40 {
+    width: 40%;
   }
 
-  .row > .marg {
-    margin: 5px;
+  .col-20 {
+    width: 20%;
+    min-width: 110px;
   }
 
-  li > .park-pad {
-    padding: 8px;
+  .col-90 > #comment {
+    width: 95%;
   }
 
-  .row > .col-10 > #sub {
-    width: 97%;
-    margin: 0 5px 5px;
+  .col-10 {
+    width: 23%;
   }
 
-  .col-50 > .row > .col-20 {
-    width: 100%;
-    font-size: 22px;
-  }
+  @media screen and (min-width: 1050px) {
+    .container {
+      max-width: 1200px;
+      width: 1100px;
+      margin: 20px 70px;
+    }
 
-  .col-60 {
-    width: 100%;
-  }
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
 
-  main > .row > .search {
-    padding: 7px;
-    border-radius: 5px;
-    width: 100%;
-  }
+    img {
+      max-height: 350px;
+      max-width: 550px;
+    }
 
-  header > .park-marg {
-    margin-bottom: 0;
-  }
+    .col-100 {
+      width: 100%;
+    }
 
-  .row > .col-90 {
-    width: 97%;
-  }
+    .col-90 {
+      width: 90%;
+    }
 
-  .row > .col-90 > .text-marg {
-    margin: 5px 5px 0;
+    .col-50 {
+      width: 50%;
+    }
+
+    .col-40 {
+      width: 40%;
+    }
+
+    .col-20 {
+      width: 20%;
+      min-width: 110px;
+    }
+
+    .col-90 > #comment {
+      width: 97%;
+    }
+
+    .col-10 {
+      width: 20%;
+    }
   }
 }
