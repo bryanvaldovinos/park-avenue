@@ -52,7 +52,7 @@ xhr.addEventListener('load', function parkList() {
 
     var visitBtn = document.createElement('button');
     visitBtn.type = 'button';
-    visitBtn.className = 'col-20 btn green-bg';
+    visitBtn.className = 'col-20 btn green-bg black-t';
     visitBtn.textContent = 'Need to go!';
     visitBtn.setAttribute('data-id', i);
     parkBtn.appendChild(visitBtn);
@@ -178,7 +178,7 @@ xhr.addEventListener('load', function parkList() {
         data.status.push($visitBtn[b].dataset.id);
       } else if ((btnPress === $park[b].getAttribute('id')) && ($visitBtn[b].textContent === 'Been there!')) {
         $visitBtn[b].textContent = 'Need to go!';
-        $visitBtn[b].className = 'col-20 btn green-bg';
+        $visitBtn[b].className = 'col-20 btn green-bg black-t';
         for (var property in data.comment) {
           if ($comment[b].dataset.dig === property.toString()) {
             $comment[b].elements[0].textContent = '';

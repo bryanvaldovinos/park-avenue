@@ -16,3 +16,4 @@ function local(event) {
 }
 
 window.addEventListener('beforeunload', local);
+window.addEventListener('pagehide', local);

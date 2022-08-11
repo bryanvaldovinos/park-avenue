@@ -120,6 +120,10 @@ li {
   color: white;
 }
 
+.black-t {
+  color: black;
+}
+
 .inline {
   display: inline;
 }
