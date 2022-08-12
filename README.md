@@ -24,8 +24,8 @@ Try the application live at [https://bryanvaldovinos.github.io/ajax-project/](ht
 
 ## Preview
 
-![User can check a park as visited!] (https://github.com/bryanvaldovinos/ajax-project/blob/main/images/checkoff.gif)
-![User can comment on visited parks!] (https://github.com/bryanvaldovinos/ajax-project/blob/main/images/commentpark.gif)
+![User can check a park as visited!](https://github.com/bryanvaldovinos/ajax-project/blob/main/images/checkoff.gif)
+![User can comment on visited parks!](https://github.com/bryanvaldovinos/ajax-project/blob/main/images/commentpark.gif)
 
 ## Stretch Features 
 
@@ -38,10 +38,10 @@ Try the application live at [https://bryanvaldovinos.github.io/ajax-project/](ht
 ## Getting STarted
 
 1. Clone the repository.
-
+    ``` shell
     git clone git@github.com:bryanvaldovinos/ajax-project.git
     cd ajax-project
- 
+     ```
 2. Request Access Key for 3rd party API.
 
     - Visit this [page](https://www.nps.gov/subjects/developer/get-started.htm) to obtain access
@@ -49,7 +49,8 @@ Try the application live at [https://bryanvaldovinos.github.io/ajax-project/](ht
     - Provide key, query by stateCode --- in our case, California.
     - Execute & retrieve URL to use for project
 
-3. Start the project. Once started you can view the application by opening the index.html file or by opening http://localhost:3000 in your browser.
+3. Start the project. 
+    - Once started you can view the application by opening the index.html file or by opening http://localhost:3000 in your browser.
     
 
 
