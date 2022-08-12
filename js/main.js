@@ -12,7 +12,7 @@ xhr.addEventListener('load', function parkList() {
     park.setAttribute('id', i);
 
     var parkRow = document.createElement('div');
-    parkRow.className = 'row light-brown-bg border-r5 park-marg park-pad';
+    parkRow.className = 'row light-brown-bg border-r5 park-marg';
     park.appendChild(parkRow);
 
     var parkCol = document.createElement('div');
