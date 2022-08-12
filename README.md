@@ -12,7 +12,7 @@ Being both a hiking enthusiast and California native, I'd figure it'd be fun to 
 
 ## Live Demo
 
-Try the application live at [https://bryanvaldovinos.github.io/ajax-project/](https://bryanvaldovinos.github.io/ajax-project/)
+Try the application live at [https://bryanvaldovinos.github.io/park-avenue/](https://bryanvaldovinos.github.io/park-avenue/)
 
 ## Features 
 
