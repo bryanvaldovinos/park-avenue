@@ -29,6 +29,7 @@ Try the application live at [https://bryanvaldovinos.github.io/park-avenue/](htt
 
 ## Stretch Features 
 
+- Users can update comments.
 - Users can filter list of Parks by US State
 
 ## System Requirements
@@ -45,8 +46,8 @@ Try the application live at [https://bryanvaldovinos.github.io/park-avenue/](htt
 2. Request Access Key for 3rd party API.
 
     - Visit this [page](https://www.nps.gov/subjects/developer/get-started.htm) to obtain access
-    - Once given key, use key retrieve data from 'parks' [here](https://www.nps.gov/subjects/developer/api-documentation.htm#/parks/getPark)
-    - Provide key, query by stateCode --- in our case, California.
+    - Once given key, use key to retrieve data from 'parks' [here](https://www.nps.gov/subjects/developer/api-documentation.htm#/parks/getPark)
+    - Provide key, query by stateCode --- in our case, California
     - Execute & retrieve URL to use for project
 
 3. Start the project. 
