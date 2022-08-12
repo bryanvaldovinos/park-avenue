@@ -24,8 +24,8 @@ Try the application live at [https://bryanvaldovinos.github.io/park-avenue/](htt
 
 ## Preview
 
-![User can check a park as visited!](https://github.com/bryanvaldovinos/ajax-project/blob/main/images/checkoff.gif)
-![User can comment on visited parks!](https://github.com/bryanvaldovinos/ajax-project/blob/main/images/commentpark.gif)
+![User can check a park as visited!](https://github.com/bryanvaldovinos/park-avenue/blob/main/images/checkoff.gif)
+![User can comment on visited parks!](https://github.com/bryanvaldovinos/park-avenue/blob/main/images/commentpark.gif)
 
 ## Stretch Features 
 
